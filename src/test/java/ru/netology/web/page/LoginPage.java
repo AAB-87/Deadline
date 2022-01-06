@@ -22,4 +22,9 @@ public class LoginPage { // Страница входа
         return new VerificationPage(); // возвращает страницу для прохождения верефикации (см. VerificationPage)
     }
 
+    public void cleanLoginFields() { // очищаем поля на странице входа
+        loginField.doubleClick().sendKeys(Keys.BACK_SPACE); // кликаем дважды в поле Логин и стираем значение
+        passwordField.doubleClick().sendKeys(Keys.BACK_SPACE); // кликаем дважды в поле Пароль и стираем значение
+    }
+
 }
