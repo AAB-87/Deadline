@@ -19,7 +19,7 @@ public class DataHelper {
     }
 
     public static AuthInfo getOtherAuthInfo() {
-        return new AuthInfo("petya", "123456");
+        return new AuthInfo("petya", "123qwerty");
     }
 
     @Value
@@ -27,21 +27,9 @@ public class DataHelper {
         private String code;
     }
 
-    public static VerificationCode getVerificationCodeFor(AuthInfo authInfo) {
-        return new VerificationCode("12345");
-    }
-
     @Value
     public static class CardInfo {
         private String cardNumber;
-    }
-
-    public static CardInfo getFirstCardNumber() {
-        return new CardInfo("5559_0000_0000_0001");
-    }
-
-    public static CardInfo getSecondCardNumber() {
-        return new CardInfo("5559_0000_0000_0002");
     }
 
 }

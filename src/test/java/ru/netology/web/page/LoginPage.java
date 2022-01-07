@@ -23,8 +23,15 @@ public class LoginPage { // Страница входа
     }
 
     public void cleanLoginFields() { // очищаем поля на странице входа
-        loginField.doubleClick().sendKeys(Keys.BACK_SPACE); // кликаем дважды в поле Логин и стираем значение
-        passwordField.doubleClick().sendKeys(Keys.BACK_SPACE); // кликаем дважды в поле Пароль и стираем значение
+        loginField.doubleClick().sendKeys(Keys.BACK_SPACE); // кликаем дважды в поле Логин (т.е. выделяем логин) и стираем значение
+        passwordField.doubleClick().sendKeys(Keys.BACK_SPACE); // кликаем дважды в поле Пароль (т.е. выделяем пароль) и стираем значение
+    }
+
+    public void invalidLogin(DataHelper.AuthInfo otherInfo) {// запрашиваем инфу у DataHelper
+        // обращаемся к полям класса
+        loginField.setValue(otherInfo.getLogin()); // заполняем поле Логин
+        passwordField.setValue(otherInfo.getPassword()); // заполняем поле Пароль
+        loginButton.click(); // кликаем по кнопке Продолжить
     }
 
 }
